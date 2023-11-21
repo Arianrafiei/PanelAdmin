@@ -1,8 +1,8 @@
 import './App.css';
 import Sidebar from './pages/Sidebar';
-import Email from './pages/Email';
+import SalesStatistic from './pages/SalesStatistic';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
+import Dashbord from './pages/Dashbord';
 
 
 function App() {
@@ -11,11 +11,10 @@ function App() {
     <Router>
       <Sidebar/>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='Email' element={<Email/>} />
+        <Route path='/' element={<Dashbord/>} />
+        <Route path='SalesStatistic' element={<SalesStatistic/>} />
       </Routes>
     </Router>
-
 </>
   );
 }

@@ -1,0 +1,115 @@
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    overflow-x: hidden;
+    border-radius: 0 50px 0 0;
+    background: #333;
+    box-sizing: initial;
+    transition: width 0.5s;
+}
+
+.navigation ul li b:nth-child(1){
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background: white;
+    display: none;
+}
+
+.navigation ul li b:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-bottom-right-radius: 20px;
+}
+
+.navigation ul li b:nth-child(2){
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: white;
+    display: none;
+}
+
+.navigation ul li b:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-top-right-radius: 20px;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2){
+    display: block;
+}
+
+.navigation:hover{
+    width: 200px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.navigation ul li.active{
+    background-color: white;
+}
+
+.navigation ul li.active a{
+    color: #333;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    top: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+}
+
