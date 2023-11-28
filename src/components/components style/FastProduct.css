@@ -1,0 +1,47 @@
+.fast-product img{
+    width: auto;
+    height: 300px;
+}
+
+.content-fast-product{
+    width: 70%;
+}
+
+.content-fast-product h3{
+    font-size: 2rem;
+    margin: 20px 30px;
+}
+
+.content-fast-product p{
+    font-size: 1.5rem;
+    margin: 20px 30px;
+}
+
+.fast-product-btn{
+    font-size: 1.5rem;
+    background-color: #248f24;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px 30px;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .fast-product{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fast-product img{
+        width: 50%;
+    }
+
+    .content-fast-product h3,
+    .content-fast-product p,
+    .content-fast-product button{
+        margin: 10px 0;
+    }    
+}

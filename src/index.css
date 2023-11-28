@@ -8,3 +8,9 @@ body{
   background-image: linear-gradient(1deg, rgba(195,207,226,1) 0%, rgba(245,247,250,1) 100%);
   height: 100vh;
 }
+
+#links{
+  text-decoration: none;
+  font-size: 1rem;
+  color: green;
+}

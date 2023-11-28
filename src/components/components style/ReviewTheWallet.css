@@ -1,0 +1,11 @@
+.price-in-wallet{
+    padding-top: 20px;
+    font-size: 1.5rem;
+}
+
+.price-in-wallet span{
+    margin: 20px;
+    background-color: #5db45d7e;
+    padding: 5px;
+    border-radius: 20px;
+}

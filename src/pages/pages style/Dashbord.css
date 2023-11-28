@@ -34,86 +34,45 @@
     border-radius: 15px;
     padding: 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fast-product img{
-    width: 30%;
-}
-
-.dashbord-grid div:nth-child(2){
-    background-color: chartreuse;
-    border-radius: 15px;
-    padding: 10px;
-}
-
-.dashbord-grid div:nth-child(3){
-    background-color: blue;
+.review-the-wallet{
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .13), 0 1px 2px 0 rgba(0, 0, 0, .11);
     grid-column: 1/3;
     border-radius: 15px;
     padding: 10px;
 }
 
-.dashbord-grid div:nth-child(4){
-    background-color: aqua;
+.new-users-joined{
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .13), 0 1px 2px 0 rgba(0, 0, 0, .11);
+    grid-column: 3/4;
     border-radius: 15px;
     padding: 10px;
 }
 
-.content-fast-product{
-    width: 70%;
-}
-
-.content-fast-product h3{
-    font-size: 2rem;
-    margin: 20px 30px;
-}
-
-.content-fast-product p{
-    font-size: 1.5rem;
-    margin: 20px 30px;
-}
-
-.content-fast-product button{
-    font-size: 1.5rem;
-    background-color: #248f24;
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: none;
-    margin: 20px 30px;
-}
-
-@media (max-width: 700px) {
-    .fast-product{
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .fast-product img{
-        width: 50%;
-    }
-
-    .content-fast-product h3,
-    .content-fast-product p,
-    .content-fast-product button{
-        margin: 10px 0;
-    }    
+.most-view-product{
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .13), 0 1px 2px 0 rgba(0, 0, 0, .11);
+    grid-column: 3/4;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 @media (max-width: 1000px) {
-    .dashbord-grid div:nth-child(1){
+    .fast-product{
         grid-column: 1/4;
     }
 
-    .dashbord-grid div:nth-child(2){
+    .review-the-wallet{
         grid-column: 1/4;
     }
 
-    .dashbord-grid div:nth-child(3){
+    .new-users-joined{
         grid-column: 1/4;
     }
 
-    .dashbord-grid div:nth-child(4){
+    .most-view-product{
         grid-column: 1/4;
     }
 }

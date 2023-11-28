@@ -1,5 +1,9 @@
-import './pages style/Dashbord.css'
-import basket from '../media/basket.png'
+import FastProduct from '../components/FastProduct';
+import ReviewTheWallet from '../components/ReviewTheWallet';
+import './pages style/Dashbord.css';
+import '../components/components style/ReviewTheWallet.css';
+import NewUsersJoined from '../components/NewUsersJoined';
+import MostViewProduct from '../components/MostViewProduct';
 
 function Dashbord() {
     return ( 
@@ -8,17 +12,10 @@ function Dashbord() {
             <div className='dashbord-section'>
                 <h1>Dashbord</h1>
                 <div className="dashbord-grid">
-                    <div className='fast-product'>
-                        <div className="content-fast-product">
-                            <h3> Get new product fastly in product page.</h3>
-                            <p>Make new product or edite them.</p>
-                            <button>Fast Product</button>
-                        </div>
-                        <img src={basket} alt="" />
-                    </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <FastProduct/>
+                    <NewUsersJoined/>
+                    <ReviewTheWallet/>
+                    <MostViewProduct/>
                 </div>
             </div>
         </div>
