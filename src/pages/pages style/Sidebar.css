@@ -93,24 +93,27 @@
     display: flex;
     text-decoration: none;
     color: white;
+    margin: 10px 0;
 }
 
 .navigation ul li a .icon{
     position: relative;
-    display: block;
-    min-width: 60px;
+    display: flex;
+    min-width: 70px;
+    justify-content: center;
+    align-items: center;
     height: 60px;
-    top: 10px;
     font-size: 30px;
     text-align: center;
 }
 
 .navigation ul li a .title{
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 10px;
     height: 60px;
     line-height: 60px;
     white-space: normal;
 }
-

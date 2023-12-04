@@ -8,10 +8,12 @@ import { useEffect } from "react";
 
 export function sidebarActive(id) {
     document.getElementById('dasbord').classList.remove('active');    
-    document.getElementById('sales-statistic').classList.remove('active');    
+    document.getElementById('statistic').classList.remove('active');    
     document.getElementById('product').classList.remove('active');    
     document.getElementById('order-history').classList.remove('active');    
     document.getElementById('wallet').classList.remove('active');    
+    document.getElementById('setting').classList.remove('active');    
+    document.getElementById('help').classList.remove('active');    
     document.getElementById(id).classList.add('active');
 }
 
@@ -29,10 +31,12 @@ function Sidebar() {
             // in start doesn't have cookise so by this conditional we fixed it.
         }else{
             document.getElementById('dasbord').classList.remove('active');    
-            document.getElementById('sales-statistic').classList.remove('active');    
+            document.getElementById('statistic').classList.remove('active');    
             document.getElementById('product').classList.remove('active');    
             document.getElementById('order-history').classList.remove('active');    
             document.getElementById('wallet').classList.remove('active');    
+            document.getElementById('setting').classList.remove('active');    
+            document.getElementById('help').classList.remove('active');     
             document.getElementById(cookies).classList.add('active');
         }
     })
@@ -49,12 +53,12 @@ function Sidebar() {
                             <span className="title">Dasbord</span>
                         </NavLink>
                     </li>
-                    <li className="list" id="sales-statistic" onClick={()=>{sidebarActive("sales-statistic"); document.cookie = 'sidebarSelected = sales-statistic';}}>
+                    <li className="list" id="statistic" onClick={()=>{sidebarActive("statistic"); document.cookie = 'sidebarSelected = statistic';}}>
                         <b></b>
                         <b></b>
-                        <NavLink to='SalesStatistic'>
+                        <NavLink to='Statistic'>
                             <span className="icon"><FontAwesomeIcon icon={faChartPie} /></span>
-                            <span className="title">Sales Statistic</span>
+                            <span className="title">Statistic</span>
                         </NavLink>
                     </li>
                     <li className="list" id="product" onClick={()=>{sidebarActive("product"); document.cookie = 'sidebarSelected = product';}}>
@@ -79,6 +83,22 @@ function Sidebar() {
                         <NavLink to='Wallet'>
                             <span className="icon"><span className="icon"><FontAwesomeIcon icon={faWallet} /></span></span>
                             <span className="title">Wallet</span>
+                        </NavLink>
+                    </li>
+                    <li className="list" id="setting" onClick={()=>{sidebarActive("setting"); document.cookie = 'sidebarSelected = setting';}}>
+                        <b></b>
+                        <b></b>
+                        <NavLink to='Setting'>
+                            <span className="icon"><span className="icon"><FontAwesomeIcon icon={faGear} /></span></span>
+                            <span className="title">Setting</span>
+                        </NavLink>
+                    </li>
+                    <li className="list" id="help" onClick={()=>{sidebarActive("help"); document.cookie = 'sidebarSelected = help';}}>
+                        <b></b>
+                        <b></b>
+                        <NavLink to='Help'>
+                            <span className="icon"><span className="icon"><FontAwesomeIcon icon={faCircleQuestion} /></span></span>
+                            <span className="title">Help</span>
                         </NavLink>
                     </li>
                 </ul>
