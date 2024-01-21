@@ -1,7 +1,7 @@
 import React from "react";
 import "./pages style/Sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse , faChartPie ,faBasketShopping ,faNoteSticky ,faWallet,faGear,faCircleQuestion,faArrowRightFromBracket} from '@fortawesome/free-solid-svg-icons'
+import { faHouse , faChartPie ,faBasketShopping ,faNoteSticky ,faWallet,faGear,faCircleQuestion, faPenNib} from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from "react-router-dom";
 import { useEffect } from "react";
 
@@ -11,7 +11,8 @@ export function sidebarActive(id) {
     document.getElementById('statistic').classList.remove('active');    
     document.getElementById('product').classList.remove('active');    
     document.getElementById('order-history').classList.remove('active');    
-    document.getElementById('wallet').classList.remove('active');    
+    document.getElementById('wallet').classList.remove('active');  
+    document.getElementById('blog').classList.remove('active');    
     document.getElementById('setting').classList.remove('active');    
     document.getElementById('help').classList.remove('active');    
     document.getElementById(id).classList.add('active');
@@ -35,6 +36,7 @@ function Sidebar() {
             document.getElementById('product').classList.remove('active');    
             document.getElementById('order-history').classList.remove('active');    
             document.getElementById('wallet').classList.remove('active');    
+            document.getElementById('blog').classList.remove('active');    
             document.getElementById('setting').classList.remove('active');    
             document.getElementById('help').classList.remove('active');     
             document.getElementById(cookies).classList.add('active');
@@ -83,6 +85,14 @@ function Sidebar() {
                         <NavLink to='Wallet'>
                             <span className="icon"><span className="icon"><FontAwesomeIcon icon={faWallet} /></span></span>
                             <span className="title">Wallet</span>
+                        </NavLink>
+                    </li>
+                    <li className="list" id="blog" onClick={()=>{sidebarActive("blog"); document.cookie = 'sidebarSelected = blog';}}>
+                        <b></b>
+                        <b></b>
+                        <NavLink to='Blog'>
+                            <span className="icon"><span className="icon"><FontAwesomeIcon icon={faPenNib} /></span></span>
+                            <span className="title">Write blog</span>
                         </NavLink>
                     </li>
                     <li className="list" id="setting" onClick={()=>{sidebarActive("setting"); document.cookie = 'sidebarSelected = setting';}}>
