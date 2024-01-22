@@ -1,65 +1,23 @@
-import { useState } from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-function BlogEditor() {
-    const [blogData,setBlogData] = useState('');
-
-    const handleChange = (e,editor)=>{
-        setBlogData(editor.getData());
-    }
-    
-    console.log(blogData);
-
-    const API_URL = "https://example.com"
-    const UPLOAD_ENDPOINT = "api/blogs/uploadImg"
-
-    function uploadAdapter(loader) {
-        return {
-            upload : () => {
-                return new Promise((resolve , reject) => {
-                    const body = new FormData();
-                    loader.file.then((file)=>{
-                        body.append("uploadImg" , file);
-                        fetch(`${API_URL}/${UPLOAD_ENDPOINT}` , {
-                            method : "post",
-                            body : body
-                        })
-                        .then((res => res.json()))
-                        .then((res) => {
-                            resolve({ default : `${API_URL}/${res.url}` })
-                        })
-                        .catch((err) => {
-                            reject(err);
-                        })
-                    })
-                })
-            }
-        }
-    }
-
-    function uploadPlugin(editor) {
-        editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
-            return uploadAdapter(loader);
-        }
-    }
-
-    return ( 
-        <>
-
-        <CKEditor
-          editor={ClassicEditor}
-          onChange={(e,editor)=>{handleChange(e,editor)}}
-          config={{
-              extraPlugins: [uploadPlugin],
-              language: 'en' // fa , en and etc.
-          }}
-        />
-
-        <button className="send-blog">Send</button>
-
-        </>
-     );
-}
-
-export default BlogEditor;
+ import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar } from '@syncfusion/ej2-react-richtexteditor';
+ import * as React from 'react';
+ function BlogEditor() {
+     const toolbarSettings = {
+         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
+             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
+             'LowerCase', 'UpperCase', '|',
+             'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
+             'Outdent', 'Indent', '|',
+             'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+     };
+     const quickToolbarSettings = {
+         image: ['Replace', 'Align', 'Caption', 'Remove', 'InsertLink', 'OpenImageLink', '-', 'EditImageLink', 'RemoveImageLink', 'Display', 'AltText', 'Dimension'],
+         link: ['Open', 'Edit', 'UnLink']
+     };
+     return (
+     <RichTextEditorComponent height={450} toolbarSettings={toolbarSettings} quickToolbarSettings={quickToolbarSettings}>
+       <Inject services={[Toolbar, Image, Link, HtmlEditor, QuickToolbar]}/>
+     </RichTextEditorComponent>);
+ }
+ export default BlogEditor;
